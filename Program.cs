@@ -41,7 +41,7 @@ namespace HACKATHON2022_POPGIL
 
         static void ExitCycleMian()
         {
-            Console.WriteLine("Si desea obtener el factorial de otro número, escribir “si” si desea cerrar el programa escribir “no”.");
+            Console.WriteLine("Si desea volver al menu, escribir “si” si desea cerrar el programa escribir “no”.");
             string CycleString = Console.ReadLine();
 
             if (CycleString == "si")
