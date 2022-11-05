@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace HACKATHON2022_POPGIL
 {
@@ -20,7 +21,7 @@ namespace HACKATHON2022_POPGIL
             }
             else if (NumProblem == "3")
             {
-
+                Problema3();
             }
             else if (NumProblem == "4")
             {
