@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HACKATHON2022-POPGIL", "HACKATHON2022-POPGIL.csproj", "{EE9E11BC-2A14-4C98-92A1-870F6AF74F90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE9E11BC-2A14-4C98-92A1-870F6AF74F90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE9E11BC-2A14-4C98-92A1-870F6AF74F90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE9E11BC-2A14-4C98-92A1-870F6AF74F90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE9E11BC-2A14-4C98-92A1-870F6AF74F90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {34487102-0766-4308-8878-6976428F2B7F}
+	EndGlobalSection
+EndGlobal
