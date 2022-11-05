@@ -335,15 +335,15 @@ namespace HACKATHON2022_POPGIL
             Regex Number;
             if (Validation2 == 2)
             {
-                Number = new Regex("^[0-1]+$");
+                Number = new Regex("^[0-1]+${1,20}");
             }
             else if (Validation2 == 10)
             {
-                Number = new Regex("^[0-9]+$");
+                Number = new Regex("^[0-9]+${1,20}");
             }
             else
             {
-                Number = new Regex("^[0-9a-fA-F]+$");
+                Number = new Regex("^[0-9a-fA-F]+${1,10}");
             }
 
             bool NumberVerification = false;
