@@ -55,7 +55,7 @@ namespace HACKATHON2022_POPGIL
             {
                 UInt64 Res = FactorialCalculation(Convert.ToUInt64(EntryUser));
                 Console.WriteLine("El factorial de " + EntryUser + " es: " + Convert.ToString(Res));
-                ExitCycle();
+                ExitCycleProblem3();
             }
             else
             {
@@ -78,7 +78,7 @@ namespace HACKATHON2022_POPGIL
             return Solution;
         }
 
-        static void ExitCycle()
+        static void ExitCycleProblem3()
         {
             Console.WriteLine("Si desea obtener el factorial de otro número, escribir “si” si desea cerrar el programa escribir “no”.");
             string CycleString = Console.ReadLine();
