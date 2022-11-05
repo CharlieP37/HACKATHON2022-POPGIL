@@ -5,7 +5,7 @@ namespace HACKATHON2022_POPGIL
 {
     internal class Program
     {
-        static void Main()
+        static void Problem4()
         {
             
             Console.Clear();
@@ -29,7 +29,7 @@ namespace HACKATHON2022_POPGIL
                     Console.WriteLine("");
                     Console.WriteLine("Precione enter para continuar");
                     Console.ReadLine();
-                    Main();
+                    Problem4();
                 }
 
                 string EntryPortionsUser = NumberPortions();
@@ -45,7 +45,7 @@ namespace HACKATHON2022_POPGIL
                 Console.WriteLine("");
                 Console.WriteLine("Precione enter para continuar");
                 Console.ReadLine();
-                Main();
+                Problem4();
             }
 
 
@@ -116,7 +116,7 @@ namespace HACKATHON2022_POPGIL
 
             if (CycleString == "si")
             {
-                Main();
+                Problem4();
             }
             else if (CycleString == "no")
             {
