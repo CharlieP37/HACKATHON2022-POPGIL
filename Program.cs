@@ -7,7 +7,7 @@ namespace HACKATHON2022_POPGIL
     {
         static void Main()
         {
-            Console.WriteLine("Bienbenido, ingrese unicamente el numero del problema que desea ver.");
+            Console.WriteLine("Bienvenido, ingrese unicamente el numero del problema que desea ver.");
             Console.WriteLine("Ejemplo: si quires ver el problema 2, ingresar un 2");
             string NumProblem = Console.ReadLine();
 
