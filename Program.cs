@@ -58,240 +58,7 @@ namespace HACKATHON2022_POPGIL
             }
         }
 
-
-
-        static void Problem2()
-        {
-            Console.WriteLine("Problema No. 2 - Contador de vocales en una cadena");
-            Console.WriteLine("\n");
-            Console.WriteLine("Bienvenido, introduzca una cadena de texto y oprima enter para confirmar.");
-            Console.WriteLine("\n");
-
-            Console.Write("Entrada:");
-
-            var Input = Console.ReadLine();
-
-            int TotalVocals = VocalCounter(Input);
-
-            Console.WriteLine("\n");
-            Console.WriteLine("El total de vocales en el texto ingresado es de: " + TotalVocals);
-        }
-
-        private static int VocalCounter(string Text)
-        {
-            int Counter = 0;
-            char[] Vocals = { 'A', 'E', 'I', 'O', 'U' };
-
-            string Input = Text.ToUpper();
-
-            for (int i = 0; i < Text.Length; i++)
-            {
-                for (int j = 0; j < Vocals.Length; j++)
-                {
-                    if (Input[i] == Vocals[j])
-                    {
-                        Counter++;
-                        j = Vocals.Length;
-                    }
-                }
-            }
-
-            return Counter;
-        }
-
-
-
-
-        static void Problema3()
-        {
-            Console.Clear();
-            Console.WriteLine("                        Sumatoria factorial");
-            Console.WriteLine("Ingresar un numero: ");
-
-            string EntryUser = Console.ReadLine();
-
-            Regex ValidationEntry = new Regex("^([0-9])*$");
-
-            if (ValidationEntry.IsMatch(EntryUser))
-            {
-                UInt64 Res = FactorialCalculation(Convert.ToUInt64(EntryUser));
-                Console.WriteLine("El factorial de " + EntryUser + " es: " + Convert.ToString(Res));
-                ExitCycleProblem3();
-            }
-            else
-            {
-                Console.WriteLine("La entrada es incorrecta, debe de ingresar un numero.");
-                Console.WriteLine("Precione enter para continuar");
-                Console.ReadLine();
-                Problema3();
-            }
-        }
-
-        static UInt64 FactorialCalculation(UInt64 NumberEntry)
-        {
-            UInt64 Solution = 1;
-
-            for (UInt64 i = 1; i < NumberEntry; i++)
-            {
-                Solution = Solution * i;
-            }
-
-            return Solution;
-        }
-
-        static void ExitCycleProblem3()
-        {
-            Console.WriteLine("Si desea obtener el factorial de otro número, escribir “si” si desea cerrar el programa escribir “no”.");
-            string CycleString = Console.ReadLine();
-
-            if (CycleString == "si")
-            {
-                Problema3();
-            }
-            else if (CycleString == "no")
-            {
-                Environment.Exit(0);
-            }
-            else
-            {
-                ExitCycleProblem3();
-            }
-        }
-
-
-
-
-
-
-
-
-
-        static void Problem4()
-        {
-
-            Console.Clear();
-            Console.WriteLine("                          Repartidor de porciones");
-            Console.WriteLine("");
-            Console.WriteLine("Ingresar la cantidad de amigos:");
-
-            string EntryFrendsUser = Console.ReadLine();
-
-            Regex ValidationFirendsEntry = new Regex("^([0-9])*$");
-
-            if (ValidationFirendsEntry.IsMatch(EntryFrendsUser))
-            {
-                try
-                {
-                    Convert.ToInt32(EntryFrendsUser);
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("El numero ingresado sobrepasa el numero permitido");
-                    Console.WriteLine("");
-                    Console.WriteLine("Precione enter para continuar");
-                    Console.ReadLine();
-                    Problem4();
-                }
-
-                string EntryPortionsUser = NumberPortions();
-
-                int Result = NumberOfCakes(Convert.ToInt32(EntryFrendsUser), Convert.ToInt32(EntryPortionsUser), 4);
-                Console.WriteLine("");
-                Console.WriteLine("Si se tienen " + EntryFrendsUser + " amigos y cada uno de ellos se comeran " + EntryPortionsUser + " porciones de pastel, se necesitaran  " + Convert.ToString(Result) + " pasteles");
-                ExitCycleProblem4();
-            }
-            else
-            {
-                Console.WriteLine("Debe de ingresar correctamente el numero de amigos");
-                Console.WriteLine("");
-                Console.WriteLine("Precione enter para continuar");
-                Console.ReadLine();
-                Problem4();
-            }
-
-
-
-
-        }
-
-
-        static string NumberPortions()
-        {
-            string EntryPortionsUser = "";
-            bool Cycle = false;
-            while (Cycle == false)
-            {
-                Console.Clear();
-                Console.WriteLine("Ingresar la cantidad de porciones:");
-                EntryPortionsUser = Console.ReadLine();
-
-
-                Regex ValidationPortionsEntry = new Regex("^([0-9])*$");
-                if (ValidationPortionsEntry.IsMatch(EntryPortionsUser))
-                {
-                    try
-                    {
-                        Convert.ToInt32(EntryPortionsUser);
-                        Cycle = true;
-                    }
-                    catch (Exception)
-                    {
-                        Console.WriteLine("El numero ingresado sobrepasa el numero permitido");
-                        Console.WriteLine("");
-                        Console.WriteLine("Precione enter para continuar");
-                        Console.ReadLine();
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Debe de ingresar correctamente el numero de porciones");
-                    Console.WriteLine("");
-                    Console.WriteLine("Precione enter para continuar");
-                    Console.ReadLine();
-                }
-            }
-
-
-
-            return EntryPortionsUser;
-        }
-
-
-        static int NumberOfCakes(int NumFirends, int NumPortions, int NumPortionCakes)
-        {
-            int FriendxPortoins = NumFirends * NumPortions;
-
-            decimal Divition = Convert.ToDecimal(FriendxPortoins) / Convert.ToDecimal(NumPortionCakes);
-
-            int Res = (int)Math.Ceiling(Divition);
-
-            return Res;
-        }
-
-
-        static void ExitCycleProblem4()
-        {
-            Console.WriteLine("");
-            Console.WriteLine("Si desea obtener el factorial de otro número, escribir “si” si desea cerrar el programa escribir “no”.");
-            string CycleString = Console.ReadLine();
-
-            if (CycleString == "si")
-            {
-                Problem4();
-            }
-            else if (CycleString == "no")
-            {
-                Environment.Exit(0);
-            }
-            else
-            {
-                ExitCycleProblem4();
-            }
-        }
-
-
-
-        /// <summary>
+        /// -------------------------------------------Problem 1--------------------------------------------------------
 
         static void Problem1()
         {
@@ -528,6 +295,250 @@ namespace HACKATHON2022_POPGIL
 
             return Result;
         }
+
+        /// -------------------------------------------End problem 1--------------------------------------------------------
+
+
+
+        /// -------------------------------------------Problem 2-------------------------------------------------------
+
+        static void Problem2()
+        {
+            Console.WriteLine("Problema No. 2 - Contador de vocales en una cadena");
+            Console.WriteLine("\n");
+            Console.WriteLine("Bienvenido, introduzca una cadena de texto y oprima enter para confirmar.");
+            Console.WriteLine("\n");
+
+            Console.Write("Entrada:");
+
+            var Input = Console.ReadLine();
+
+            int TotalVocals = VocalCounter(Input);
+
+            Console.WriteLine("\n");
+            Console.WriteLine("El total de vocales en el texto ingresado es de: " + TotalVocals);
+        }
+
+        private static int VocalCounter(string Text)
+        {
+            int Counter = 0;
+            char[] Vocals = { 'A', 'E', 'I', 'O', 'U' };
+
+            string Input = Text.ToUpper();
+
+            for (int i = 0; i < Text.Length; i++)
+            {
+                for (int j = 0; j < Vocals.Length; j++)
+                {
+                    if (Input[i] == Vocals[j])
+                    {
+                        Counter++;
+                        j = Vocals.Length;
+                    }
+                }
+            }
+
+            return Counter;
+        }
+
+        /// -------------------------------------------End problem 2--------------------------------------------------------
+
+
+        /// -------------------------------------------Problem 3--------------------------------------------------------
+
+        static void Problema3()
+        {
+            Console.Clear();
+            Console.WriteLine("                        Sumatoria factorial");
+            Console.WriteLine("Ingresar un numero: ");
+
+            string EntryUser = Console.ReadLine();
+
+            Regex ValidationEntry = new Regex("^([0-9])*$");
+
+            if (ValidationEntry.IsMatch(EntryUser))
+            {
+                UInt64 Res = FactorialCalculation(Convert.ToUInt64(EntryUser));
+                Console.WriteLine("El factorial de " + EntryUser + " es: " + Convert.ToString(Res));
+                ExitCycleProblem3();
+            }
+            else
+            {
+                Console.WriteLine("La entrada es incorrecta, debe de ingresar un numero.");
+                Console.WriteLine("Precione enter para continuar");
+                Console.ReadLine();
+                Problema3();
+            }
+        }
+
+        static UInt64 FactorialCalculation(UInt64 NumberEntry)
+        {
+            UInt64 Solution = 1;
+
+            for (UInt64 i = 1; i < NumberEntry; i++)
+            {
+                Solution = Solution * i;
+            }
+
+            return Solution;
+        }
+
+        static void ExitCycleProblem3()
+        {
+            Console.WriteLine("Si desea obtener el factorial de otro número, escribir “si” si desea cerrar el programa escribir “no”.");
+            string CycleString = Console.ReadLine();
+
+            if (CycleString == "si")
+            {
+                Problema3();
+            }
+            else if (CycleString == "no")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                ExitCycleProblem3();
+            }
+        }
+
+        /// -------------------------------------------End problem 3--------------------------------------------------------
+
+
+
+
+
+
+
+        /// -------------------------------------------Problem 4--------------------------------------------------------
+
+        static void Problem4()
+        {
+
+            Console.Clear();
+            Console.WriteLine("                          Repartidor de porciones");
+            Console.WriteLine("");
+            Console.WriteLine("Ingresar la cantidad de amigos:");
+
+            string EntryFrendsUser = Console.ReadLine();
+
+            Regex ValidationFirendsEntry = new Regex("^([0-9])*$");
+
+            if (ValidationFirendsEntry.IsMatch(EntryFrendsUser))
+            {
+                try
+                {
+                    Convert.ToInt32(EntryFrendsUser);
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("El numero ingresado sobrepasa el numero permitido");
+                    Console.WriteLine("");
+                    Console.WriteLine("Precione enter para continuar");
+                    Console.ReadLine();
+                    Problem4();
+                }
+
+                string EntryPortionsUser = NumberPortions();
+
+                int Result = NumberOfCakes(Convert.ToInt32(EntryFrendsUser), Convert.ToInt32(EntryPortionsUser), 4);
+                Console.WriteLine("");
+                Console.WriteLine("Si se tienen " + EntryFrendsUser + " amigos y cada uno de ellos se comeran " + EntryPortionsUser + " porciones de pastel, se necesitaran  " + Convert.ToString(Result) + " pasteles");
+                ExitCycleProblem4();
+            }
+            else
+            {
+                Console.WriteLine("Debe de ingresar correctamente el numero de amigos");
+                Console.WriteLine("");
+                Console.WriteLine("Precione enter para continuar");
+                Console.ReadLine();
+                Problem4();
+            }
+
+
+
+
+        }
+
+
+        static string NumberPortions()
+        {
+            string EntryPortionsUser = "";
+            bool Cycle = false;
+            while (Cycle == false)
+            {
+                Console.Clear();
+                Console.WriteLine("Ingresar la cantidad de porciones:");
+                EntryPortionsUser = Console.ReadLine();
+
+
+                Regex ValidationPortionsEntry = new Regex("^([0-9])*$");
+                if (ValidationPortionsEntry.IsMatch(EntryPortionsUser))
+                {
+                    try
+                    {
+                        Convert.ToInt32(EntryPortionsUser);
+                        Cycle = true;
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("El numero ingresado sobrepasa el numero permitido");
+                        Console.WriteLine("");
+                        Console.WriteLine("Precione enter para continuar");
+                        Console.ReadLine();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Debe de ingresar correctamente el numero de porciones");
+                    Console.WriteLine("");
+                    Console.WriteLine("Precione enter para continuar");
+                    Console.ReadLine();
+                }
+            }
+
+
+
+            return EntryPortionsUser;
+        }
+
+
+        static int NumberOfCakes(int NumFirends, int NumPortions, int NumPortionCakes)
+        {
+            int FriendxPortoins = NumFirends * NumPortions;
+
+            decimal Divition = Convert.ToDecimal(FriendxPortoins) / Convert.ToDecimal(NumPortionCakes);
+
+            int Res = (int)Math.Ceiling(Divition);
+
+            return Res;
+        }
+
+
+        static void ExitCycleProblem4()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("Si desea obtener el factorial de otro número, escribir “si” si desea cerrar el programa escribir “no”.");
+            string CycleString = Console.ReadLine();
+
+            if (CycleString == "si")
+            {
+                Problem4();
+            }
+            else if (CycleString == "no")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                ExitCycleProblem4();
+            }
+        }
+
+
+        /// -------------------------------------------End problem 4--------------------------------------------------------
+
+
     }
 
 
